@@ -56,6 +56,8 @@ void ModeAuto::update()
                     stop_vehicle();
                 }
                 // update distance to destination
+                send_guided_position_target();
+                rover.mode_guided.update();
                 _distance_to_destination = rover.current_loc.get_distance(g2.wp_nav.get_destination());
             }
             break;
