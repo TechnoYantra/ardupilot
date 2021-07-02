@@ -868,25 +868,13 @@ void AP_MotorsUGV::output_throttle(SRV_Channel::Aux_servo_function_t function, f
             case SRV_Channel::k_throttle:
             case SRV_Channel::k_throttleLeft:
             case SRV_Channel::k_motor1:
-                if ((throttle > -0.1f) && (throttle < 0.1f)) {
-                    _relayEvents.do_set_relay(0, 1);
-                    _relayEvents.do_set_relay(1, 1);
-                }
-                else {
                     _relayEvents.do_set_relay(0, relay_high);
                     _relayEvents.do_set_relay(1, !relay_high);
-                }
                 break;
             case SRV_Channel::k_throttleRight:
             case SRV_Channel::k_motor2:
-                if ((throttle > -0.1f) && (throttle < 0.1f)) {
-                    _relayEvents.do_set_relay(2, 1);
-                    _relayEvents.do_set_relay(3, 1);
-                }
-                else {
                     _relayEvents.do_set_relay(2, relay_high);
                     _relayEvents.do_set_relay(3, !relay_high);
-                }
                 break;
             case SRV_Channel::k_motor3:
             case SRV_Channel::k_motor4:
