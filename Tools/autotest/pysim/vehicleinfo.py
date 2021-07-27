@@ -308,6 +308,12 @@ class VehicleInfo(object):
             "calibration": {
                 "extra_mavlink_cmds": "module load sitl_calibration;",
             },
+            "gazebo-json": {
+                "waf_target": "bin/ardurover",
+                "extra_mavlink_cmds": "module load sitl_calibration;",
+                "default_params_filename": ["default_params/rover.parm",
+                                            "default_params/rover-skid.parm"],
+            },
         },
     },
     "ArduSub": {
